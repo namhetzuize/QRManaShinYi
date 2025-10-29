@@ -26,7 +26,7 @@ def append_order_to_gsheet(sheet_id, worksheet_name, order_data):
     default_key = os.path.join(os.path.dirname(__file__), 'festive-post-464106-p3-d250f2280eae.json')
     key_path = os.environ.get('GOOGLE_SERVICE_ACCOUNT_FILE', default_key)
     client = get_gsheet_client(key_path)
-    sh = client.open_by_key(sheet_id)w
+    sh = client.open_by_key(sheet_id)
     ws = sh.worksheet(worksheet_name)
     # Nếu sheet trống (chưa có header), thêm header vào dòng 1
     if ws.row_count == 0 or not ws.get_all_values():
