@@ -16,7 +16,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Copy requirements and install
 COPY requirements.txt /app/requirements.txt
-RUN pip install --upgrade pip && pip install --no-cache-dir -r /app/requirements.txt
+RUN pip install --upgrade pip \
+    && pip install --no-cache-dir -r /app/requirements.txt \
+    && pip install --no-cache-dir httpx==0.25.2
+
 
 # Copy application
 COPY . /app
