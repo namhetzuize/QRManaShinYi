@@ -1,0 +1,41 @@
+# === Python cache & virtual env ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.venv311/
+venv/
+
+# === IDE / System files ===
+.idea/
+.vscode/
+.DS_Store
+
+# === Environment / secrets ===
+.env
+.env.*
+secrets/
+token_*.pickle
+*service_account*.json
+client_secret_*.json
+google_oauth_config.json
+
+# === Database & local data ===
+webserver/products.db
+webserver/products_summary.xlsx
+
+# === Logs ===
+*.log
+
+# === Local executables ===
+ngrok.exe
+
+# === Build & misc ===
+dist/
+build/
+*.egg-info/
+
+# === OS-specific ===
+Thumbs.db
+ehthumbs.db

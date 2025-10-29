@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "festive-post-464106-p3",
+  "private_key_id": "d250f2280eae1710236017136f8a96e19049ab17",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDLcm6Mibv1eiWQ\n5/2visobKaflvywazK4Q95VKyy0vo47JJck75jsZK6/nucCUMxr2k4rwkDjkHNbR\nU51o9+eymuWfqu2zoyFT8LtHGBusfbBrvi6ARDyAUoxlG2qWDPu3A4OTC6WjOZ+K\nYTo13tp3aEGz//s3+oPvrhVOq+aVy4kKQbdGoNFCtbCa6LrnAI6A4uy7QchK/O85\noh9nWPBNPeYnzyC2Iqu9G5BtUCUyXtKQw/uO83/djYgcQQPbY2VqN9b677gRqjLN\nzIqBhw6/dnxpz19bwdgCbWo6d4netX21oC6xV/81auVYkLatlHHtg/iKgiwBn/tu\ns6lIcU1NAgMBAAECggEAHcOcEMuFyCAaptyJ7MitUNQDUEVrum//d1QBb3PSJIoV\nNbBlhHHma4RMs+YlGolvhGuJhDBVYmols3I8MUMzjpnCxl1HcWSIV7N8cqZARjgN\nO3YTb4iMIWnySEh+i31Sxi+pbDXkAcFIagJXddIovBdwpVjp9AKeks4xJ9VWYsul\nSexdKaO//Ar8Q5T2KQqEMIsQUHOHhf9Gb5WJ3XoES+mc7C7/CyJ52bdDv3zOkFGM\nvUT3KTNAheDwWgVHnVR88luBHKRiPRRJXJHcH1nUpEEGW0KX3GCPFZWJSATZobER\nWEHqUK05R5aN4mZVrFSIHaXSGb3bWQNShml1rFqWsQKBgQD1O3PbGuV+nAUAySDD\no535qsTdrWE4uJwNhGmv4mW3Ohxp9+6jio1GbckXyqFxOC8HoNj6o3m7miqBsuA2\nAeKH4SEXpraVZChYzJl+yN/8BXC/gNKnH8biUJvLu7VoHkbNR3k5wxI3IRNLKd/K\nN6W+G8dJnpTgxJYckgmq5n/ZcwKBgQDUYUozKNLh4C0ZzbCjDRzO2p96S2X0dQpc\nqlPYNbUf7NhpV5vWSp8x7xDAAuUCcgNxQa5vuHexAk51uaX3ie88Z6X7BsDNMtVN\n3CkYSpinw5cF9C0ETbKrn/d06IpWjMach7J50+e+xCPDzxlfTnbcWFw/3HEpu70z\nS2qNVu+OPwKBgB41UaM23/hFrdQX8oJHAGnF4HRSLDy5ePetTPuOjusQLHndQbdB\nlP+M/I2Ct3pj6l8tMC1Hv/IdHolViIr+lnIYiGQKdElYyiOOKIZWpki8PtRIQSq3\nHl+4gEiLeeA2gpA88rDr162U1HSY1ulpC3CsqVLnRv2dGcSxNKGpvSwDAoGARjyu\nt2Cm7YCgKcp2wlXR0y9GUsGgxEn41VCXTgflENvZbm1E4ofnQjJYDchnSHnAXbJl\nKBmPrAChRhnRo54Aeq+kmvJOzQ4ksQ1AogH5nnH2/kcUpDm1/0B2LDnDloAUJyxR\ngCzulY50bYuOTpC6ioDGcXBMFIs8NTyZzoiTzS0CgYEAjVKtEUC5htUjth3kgmj/\n1wZsl7v9Jc6dxG58C6NyaAsmxeYQggCjvNEZhc441hv747pxezVZnby2JLCJK9no\nC4h5m00sC43/sVUyIWgrpeHUF6SupvU+cunycjxVFAbx7WVY18b0HyDvBub8t5jp\nLd0rCQZnF6US5Rz6UzgnKQs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "mecamitsu2025@festive-post-464106-p3.iam.gserviceaccount.com",
+  "client_id": "103553538152032450856",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mecamitsu2025%40festive-post-464106-p3.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
