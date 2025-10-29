@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng ký</title>
+    <style>
+        body {
+            background: url('/static/bgshinyi1.jpg') no-repeat center center fixed;
+            background-size: 100vw 100vh;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .register-container {
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            padding: 40px 32px 32px 32px;
+            width: 360px;
+            text-align: center;
+            animation: fadeIn 1s;
+        }
+        .register-container h2 {
+            margin-bottom: 24px;
+            color: #2d3a4b;
+            letter-spacing: 1px;
+            font-size: 2em;
+        }
+        .register-container input[type="text"],
+        .register-container input[type="password"] {
+            width: 90%;
+            padding: 10px 12px;
+            margin: 10px 0;
+            border: 1px solid #b2bec3;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.2s;
+            box-sizing: border-box;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .register-container input:focus {
+            border: 1.5px solid #66a6ff;
+            outline: none;
+        }
+        .register-container .role-group {
+            margin: 10px 0 18px 0;
+            text-align: left;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .register-container label {
+            font-size: 15px;
+            color: #2d3a4b;
+        }
+        .register-container button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #66a6ff 0%, #89f7fe 100%);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 12px;
+            box-shadow: 0 2px 8px rgba(102,166,255,0.15);
+            transition: background 0.2s;
+        }
+        .register-container button:hover {
+            background: linear-gradient(90deg, #89f7fe 0%, #66a6ff 100%);
+        }
+        .register-container a {
+            display: inline-block;
+            margin-top: 18px;
+            color: #2980b9;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        .register-container a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .admin-code-group {
+            display: none;
+            margin-bottom: 10px;
+        }
+        .admin-code-group input {
+            width: 90%;
+        }
+        .error-msg {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+    </style>
+    <script>
+        function toggleAdminCode() {
+            var controlRadio = document.querySelector('input[name="role"][value="control"]');
+            var adminCodeGroup = document.getElementById('adminCodeGroup');
+            if (controlRadio.checked) {
+                adminCodeGroup.style.display = 'block';
+            } else {
+                adminCodeGroup.style.display = 'none';
+                document.getElementById('admin_code').value = '';
+                document.getElementById('errorMsg').style.display = 'none';
+            }
+        }
+        function validateRegisterForm(e) {
+            var role = document.querySelector('input[name="role"]:checked').value;
+            if (role === "control") {
+                var code = document.getElementById('admin_code').value.trim();
+                if (code !== "123321") { //Mã xác thực admin
+                    document.getElementById('errorMsg').style.display = 'block';
+                    e.preventDefault();
+                    return false;
+                }
+            }
+            document.getElementById('errorMsg').style.display = 'none';
+            return true;
+        }
+        window.onload = function() {
+            document.querySelectorAll('input[name="role"]').forEach(function(radio) {
+                radio.addEventListener('change', toggleAdminCode);
+            });
+            document.getElementById('registerForm').addEventListener('submit', validateRegisterForm);
+            toggleAdminCode();
+        }
+    </script>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Tạo tài khoản mới</h2>
+        <form method="post" action="/register" id="registerForm" autocomplete="off">
+            <input name="username" type="text" placeholder="Tài khoản" required>
+            <input name="password" type="password" placeholder="Mật khẩu" required>
+            <div class="role-group">
+                <label><input type="radio" name="role" value="view" checked> Khách</label>
+                <label><input type="radio" name="role" value="control"> Admin</label>
+            </div>
+            <div class="admin-code-group" id="adminCodeGroup">
+                <input type="text" id="admin_code" name="admin_code" placeholder="Nhập mã xác thực admin">
+            </div>
+            <div class="error-msg" id="errorMsg">Mã xác thực admin không đúng!</div>
+            <button type="submit">Đăng ký</button>
+        </form>
+        <a href="/login">Quay lại đăng nhập</a>
+    </div>
+</body>
+</html>

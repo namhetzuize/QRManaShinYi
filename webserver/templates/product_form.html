@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <title>Nhập hồ sơ đơn hàng</title>
+  <link rel="stylesheet" href="/static/style.css?v=2" />
+  <style>
+    /* Page-specific styles: cool blue theme for product form */
+    body{background:linear-gradient(180deg,#c1d9ec 0%, #b8cce6 100%)}
+    .panel{max-width:1100px;margin:28px auto;padding:26px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    label.form-label{color:#1f6fb0}
+    input,textarea{transition:box-shadow .18s ease,border-color .18s ease}
+    input:focus,textarea:focus{box-shadow:0 6px 20px rgba(13,90,150,0.12);border-color:#1f6fb0}
+    .btn-primary{background:#0b6bb3}
+  </style>
+</head>
+<body class="site-with-bg">
+  <div class="site-header">
+    <div class="logo"><img src="/static/logoshinyi.png" alt="Shin Yi logo"/></div>
+    <div></div>
+    <div class="user-area">{% if request.cookies.session_id %}{% endif %}</div>
+  </div>
+  <h1 class="product-title">NHẬP HỒ SƠ ĐƠN HÀNG</h1>
+  <form action="/product/create" method="post" enctype="multipart/form-data">
+  <div class="panel">
+    <div class="form-grid">
+      <div>
+        <label class="form-label">TÊN KHÁCH HÀNG</label>
+        <input id="name" type="text" name="name" required>
+        <label class="form-label">MÃ ĐƠN HÀNG</label>
+        <input id="product_code" type="text" name="product_code">
+        <label class="form-label">NGÀY CẤP TEM</label>
+        <input id="issue_date" type="text" name="issue_date" placeholder="YYYY-MM-DD">
+        <label class="form-label">SỐ SERI TEM</label>
+        <input id="serial_no" type="text" name="serial_no" readonly>
+      </div>
+      <div>
+        <label class="form-label">TÊN NHÂN VIÊN NHẬP HÀNG</label>
+        <input id="staff_name" type="text" name="staff_name" required>
+        <label class="form-label">MÃ NHÂN VIÊN</label>
+        <input id="staff_id" type="text" name="staff_id" required>
+        <label class="form-label">Tải lên tệp chứng nhận (file ảnh, pdf)</label>
+        <input id="certificate" type="file" name="certificate">
+        <label class="form-label">Nhập link chứng nhận</label>
+        <input id="external_link" type="url" name="external_link" placeholder="http://">
+      </div>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:20px;align-items:flex-start">
+      <div class="submit-row"><button class="btn btn-primary" type="submit">Xác nhận</button></div>
+      <div id="preview" style="flex:1;padding:14px;border:1px solid rgba(0,0,0,0.06);background:#fff;border-radius:6px">
+        <h3 style="margin-top:0">Xem trước (chi tiết sẽ đồng bộ khi tạo QR)</h3>
+        <div><strong>Tên khách hàng:</strong> <span id="pv_name">-</span></div>
+        <div><strong>Mã đơn hàng:</strong> <span id="pv_product_code">-</span></div>
+        <div><strong>Ngày cấp tem:</strong> <span id="pv_issue_date">-</span></div>
+        <div><strong>Số seri tem:</strong> <span id="pv_serial_no">-</span></div>
+        <div><strong>Tên nhân viên:</strong> <span id="pv_staff_name">-</span></div>
+        <div><strong>Mã nhân viên:</strong> <span id="pv_staff_id">-</span></div>
+        <div><strong>Link chứng nhận:</strong> <a id="pv_external_link" href="#">-</a></div>
+        <div><strong>Tệp tải lên:</strong> <span id="pv_certificate">-</span></div>
+      </div>
+    </div>
+  </div>
+  </form>
+  <p class="text-center small"><a href="/">Quay về</a></p>
+  <script src="/static/app.js"></script>
+</body>
+</html>

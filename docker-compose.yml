@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    container_name: qrmanashin_yi_web
+    ports:
+      - "8000:8000"
+    environment:
+      - GOOGLE_SHEET_ID=${GOOGLE_SHEET_ID}
+      - GOOGLE_SERVICE_ACCOUNT_FILE=/secrets/${GOOGLE_SERVICE_ACCOUNT_FILENAME}
+    volumes:
+      - ./webserver/static:/app/webserver/static:rw
+      - ./webserver/products.db:/app/webserver/products.db:rw
+      - ./webserver/products_summary.xlsx:/app/webserver/products_summary.xlsx:rw
+      - ./webserver:/app/webserver:rw
+      - ./secrets:/secrets:ro
+    restart: unless-stopped

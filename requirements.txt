@@ -1,0 +1,13 @@
+fastapi==0.95.2
+uvicorn[standard]==0.22.0
+Jinja2==3.1.2
+authlib==1.2.0
+gspread==5.7.2
+google-auth==2.23.0
+google-auth-oauthlib==1.0.0
+google-api-python-client==2.86.0
+openpyxl==3.1.2
+qrcode==7.3
+Pillow==10.0.0
+requests==2.31.0
+python-dotenv==1.0.0

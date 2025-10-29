@@ -1,0 +1,52 @@
+[
+  {
+    "username": "42101521",
+    "password_hash": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+    "role": "control"
+  },
+  {
+    "username": "42101507",
+    "password_hash": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+    "role": "view"
+  },
+  {
+    "username": "42100644",
+    "password_hash": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+    "role": "control"
+  },
+  {
+    "username": "ViewTest",
+    "password_hash": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+    "role": "view"
+  },
+  {
+    "username": "admin",
+    "password_hash": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+    "role": "view"
+  },
+  {
+    "username": "SangDY",
+    "password_hash": "344f8081f6f484f5e24463adc112ad85a4446e2e9725281bbe6519d3779d3c9c",
+    "role": "control"
+  },
+  {
+    "username": "SangDYView",
+    "password_hash": "344f8081f6f484f5e24463adc112ad85a4446e2e9725281bbe6519d3779d3c9c",
+    "role": "view"
+  },
+  {
+    "username": "Khấu Kiên",
+    "password_hash": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "role": "view"
+  },
+  {
+    "username": "dwad",
+    "password_hash": "d3b65fd93db07b5d7d9c0a239875ae271b35a13e6fb20b5eafeae599e96a98e1",
+    "role": "view"
+  },
+  {
+    "username": "Namzuize",
+    "password_hash": "ca42bc17f119994df5a9fbea43809bc55813e8f79cbd7df35245d0ab51bf1ed7",
+    "role": "control"
+  }
+]

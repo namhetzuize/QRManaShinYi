@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Đăng nhập</title>
+    <style>
+        body {
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: url('/static/bgshinyi11.jpg') no-repeat center center fixed;
+            background-size: 100vw 100vh;
+        }
+        .login-container {
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            padding: 40px 32px 32px 32px;
+            width: 340px;
+            text-align: center;
+            animation: fadeIn 1s;
+        }
+        .login-container h2 {
+            margin-bottom: 24px;
+            color: #2d3a4b;
+            letter-spacing: 1px;
+        }
+        .login-container input {
+            width: 90%;
+            padding: 10px 12px;
+            margin: 10px 0;
+            border: 1px solid #b2bec3;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.2s;
+        }
+        .login-container input:focus {
+            border: 1.5px solid #66a6ff;
+            outline: none;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #66a6ff 0%, #89f7fe 100%);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 12px;
+            box-shadow: 0 2px 8px rgba(102,166,255,0.15);
+            transition: background 0.2s;
+        }
+        .login-container button:hover {
+            background: linear-gradient(90deg, #89f7fe 0%, #66a6ff 100%);
+        }
+        .login-container a {
+            display: inline-block;
+            margin-top: 18px;
+            color: #2980b9;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        .login-container a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Đăng nhập</h2>
+        <form method="post" action="/login">
+            <input name="username" placeholder="Tài khoản" required><br>
+            <input name="password" type="password" placeholder="Mật khẩu" required><br>
+            <button type="submit">Đăng nhập</button>
+        </form>
+        <a href="/register">Tạo tài khoản mới</a>
+</body>
+</html>

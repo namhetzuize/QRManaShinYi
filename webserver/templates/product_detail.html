@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Chi tiết đơn hàng</title>
+  <link rel="stylesheet" href="/static/style.css?v=2" />
+  <style>
+    /* Product detail page styles */
+    body{background:linear-gradient(180deg,#f6fbff 0%, #fbfdff 100%)}
+    .panel{max-width:1200px;margin:18px auto;padding:18px}
+    .card-grid{grid-template-columns:360px 1fr}
+    .panel img{transition:transform .25s ease}
+    .panel img:hover{transform:scale(1.03)}
+    .panel h3{margin-top:0}
+  </style>
+</head>
+<body class="site-with-bg">
+  <div class="site-header">
+    <div class="logo"><img src="/static/logoshinyi.png" alt="Shin Yi logo"/></div>
+    <div></div>
+    <div class="user-area">{% if request.cookies.session_id %}{% endif %}</div>
+  </div>
+  <h1 class="product-title">TEM KIỂM ĐỊNH ĐƠN HÀNG
+  <div class="card-grid">
+    <div class="panel">
+      <p><strong>Tên khách hàng:</strong><br/>{{ product.name }}</p>
+  <p><strong>Mã đơn hàng:</strong><br/>{% if product.product_code %}{{ product.product_code }}{% else %}{{ product.product_id }}{% endif %}</p>
+      <p><strong>Ngày nhập:</strong><br/>{{ product.created_at }}</p>
+      <p><strong>Ngày hồ sơ:</strong><br/>{% if product.issue_date %}{{ product.issue_date }}{% else %}-{% endif %}</p>
+      <p><strong>Số seri tem:</strong><br/>{% if product.serial_no %}{{ product.serial_no }}{% else %}-{% endif %}</p>
+      <div class="panel" style="margin-top:10px; text-align:center;">
+        <div class="small muted">Vị trí hiển thị mã QR tem sản phẩm</div>
+        <div style="margin-top:8px;">
+          {% if product.qr_link %}
+            <img src="{{ product.qr_link }}" alt="QR" style="max-width:200px;" />
+          {% elif product.qr_base64 %}
+            <img src="data:image/png;base64,{{ product.qr_base64 }}" alt="QR" style="max-width:200px;" />
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3 class="text-center">Preview hồ sơ (file ảnh, pdf, hoặc mở đường link)</h3>
+      <div style="padding:10px; border:1px solid #eee; min-height:300px;">
+        {% if product.cert_link %}
+          <p><a href="{{ product.cert_link }}" target="_blank">Mở file chứng nhận</a></p>
+          {% if product.cert_link.endswith('.pdf') %}
+            <embed src="{{ product.cert_link }}" type="application/pdf" width="100%" height="400px" />
+          {% else %}
+            <img src="{{ product.cert_link }}" style="max-width:100%;" />
+          {% endif %}
+        {% elif product.external_link %}
+          <p><a href="{{ product.external_link }}" target="_blank">Mở link hồ sơ</a></p>
+        {% else %}
+          <p>Không có file hay link để hiển thị.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <p class="text-center" style="margin-top:12px;">
+    <a href="/product/new">Tạo hồ sơ khác</a> | <a href="/products">Danh sách hồ sơ</a> | <a href="/">Trang chủ</a>
+    {% if is_control %}
+      | <a href="/product/edit/{{ product.product_id }}">Sửa</a>
+      | <form action="/product/delete" method="post" style="display:inline">
+          <input type="hidden" name="product_id" value="{{ product.product_id }}" />
+          <button class="btn-delete" type="submit" onclick="return confirm('Bạn có chắc muốn xoá hồ sơ này?')">Xoá</button>
+        </form>
+    {% endif %}
+  </p>
+</body>
+</html>

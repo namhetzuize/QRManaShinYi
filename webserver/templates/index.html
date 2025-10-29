@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <title>Shin Yi - Nhập hồ sơ đơn hàng</title>
+    <!-- Cache-busted stylesheet to force browser reload when updating -->
+    <link rel="stylesheet" href="/static/style.css?v=2">
+    <!-- Critical banner CSS inline to avoid caching issues and allow quick edits -->
+    <style>
+    :root{--bg:#f8fbfe;--accent:#0b6bb3;--dark:#263244;--muted:#6b7785;--cta:#ffd500}
+    *{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background:var(--bg);color:var(--dark)}
+    .container{max-width:1800px;margin:0 auto;padding:0 18px}
+    .banner{position:relative;background:linear-gradient(180deg,#ffffff 0%, #f2f7fb 65%);overflow:visible;min-height:100vh;display:flex;align-items:center}
+    .banner-inner{position:relative;width:100%}
+    .banner-top{display:flex;align-items:flex-start;justify-content:space-between;padding-top:6px}
+    .logo img{height:80px;display:block;margin-left:5px}
+    .company-top-right{text-align:right;color:var(--accent)}
+    .company-top-right .company-line1{font-size:20px;font-weight:800}
+    .company-top-right .company-line2{font-style:italic;font-size:12px;margin-top:4px;color:var(--muted)}
+    .user-area{font-size:14px;color:var(--muted)}
+    .banner-content{display:flex;align-items:center;gap:40px;margin:0 auto;min-height:60vh;width:100%;max-width:1200px}
+    .valve img{height:500px;max-width:100%;object-fit:contain}
+    .hero-text{flex:1;padding-left:20px}
+    .hero-text .company{font-size:72px;letter-spacing:4px;margin:0;color:var(--dark);font-weight:800;text-align:center}
+    .hero-text .slogan{font-size:54px;margin:24px 0 0 0;color:#4c555b;font-weight:600;text-align:center;line-height:1.02}
+    .btn-hero{display:block;margin:0 auto 110px auto;padding:30px 30px;border-radius:0px;box-shadow:0 0px 0px rgba(0,0,0,0.14);font-weight:900;position:relative;z-index:20}
+    .bottom-band{position:absolute;left:0;right:0;bottom:0;height:120px}
+    .bottom-band img{width:100%;height:200px;object-fit:cover;display:block}
+    .bottom-band .band-text{position:absolute;bottom:39px;color:#fff;font-weight:700;font-size:20px}
+    .bottom-band .band-left{left:36px}
+    .bottom-band .band-right{right:36px}
+    @media (max-width:1100px){.banner-content{min-height:360px}.valve img{height:300px}.hero-text .company{font-size:48px}.hero-text .slogan{font-size:34px}}
+    @media (max-width:800px){.banner-top{align-items:center}.logo img{height:96px}.banner-content{flex-direction:column;gap:12px;min-height:280px;padding-bottom:12px}.valve img{height:180px;max-width:80%}.hero-text .company{font-size:28px}.hero-text .slogan{font-size:20px}.bottom-band .band-text{display:none}.btn-hero{padding:10px 20px}}
+    </style>
+</head>
+<body class="site-with-bg">
+    <div class="banner">
+        <div class="banner-inner container">
+            <div class="site-header">
+                <div class="logo"><img src="/static/logoshinyi.png" alt="Shin Yi logo"/></div>
+                <div class="company-top-right">
+                    <div class="company-line1">CÔNG TY CỔ PHẦN VAN SHIN YI</div>
+                    <div class="company-line2">SHIN YI VALVES CORPORATION</div>
+                </div>
+                <div class="user-area">{% if username %} {{ username }} <a href="/logout">(đăng xuất)</a>{% else %}<a href="/login">Đăng nhập</a>{% endif %}</div>
+            </div>
+
+            <div class="banner-content">
+                <div class="valve"><img src="/static/Vantrang1.png" alt="van"/></div>
+
+                <div class="hero-text">
+                    <h1 class="company">VAN SHIN YI</h1>
+                    <p class="slogan">"VỮNG BỀN<br/>TỪ CỐT LÕI"</p>
+                </div>
+            </div>
+
+                                    {% if username %}
+                                        <a class="btn btn-primary" href="/products" style="position:absolute;right:36px;top:140px;">DANH SÁCH HỒ SƠ</a>
+                                    {% endif %}
+                                    <div class="bottom-cta">
+                                        <a class="cta btn-hero" href="/product/new">NHẬP HỒ SƠ ĐƠN HÀNG</a>
+                                    </div>
+
+            <div class="bottom-band">
+                <img src="/static/BottonEle.png" alt="band"/>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

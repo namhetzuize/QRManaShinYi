@@ -1,0 +1,81 @@
+:root{--bg:#f8fbfe;--accent:#0b6bb3;--dark:#263244;--muted:#6b7785;--cta:#ffd500}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;background:var(--bg);color:var(--dark)}
+.site-with-bg, body.site-with-bg{background-size:cover;background-repeat:no-repeat;background-attachment:fixed;background-position:center center}
+/* prefer a full-size PNG background if present, otherwise fallback to SVG pattern */
+.site-with-bg{background-image: url('/static/globaldeli.png'), url('/static/bg/pattern.svg')}
+.container{max-width:1600px;margin:0 auto;padding:0 36px}
+
+/* Banner full screen */
+.banner{position:relative;background:linear-gradient(180deg,#ffffff 0%, #f2f7fb 65%);overflow:visible;min-height:100vh;display:flex;align-items:center}
+.banner-inner{position:relative;width:100%}
+.banner-top{display:flex;align-items:flex-start;justify-content:space-between;padding-top:18px}
+.logo img{height:140px;display:block}
+.company-top-right{text-align:right;color:var(--accent)}
+.company-top-right .company-line1{font-size:20px;font-weight:800}
+.company-top-right .company-line2{font-style:italic;font-size:12px;margin-top:4px;color:var(--muted)}
+.user-area{font-size:14px;color:var(--muted)}
+
+.banner-content{display:flex;align-items:flex-start;gap:48px;margin:0 auto;min-height:64vh;width:100%;max-width:1400px}
+.valve{flex:0 0 520px;display:flex;justify-content:flex-start}
+.valve img{height:520px;max-width:520px;object-fit:contain;transform:translateX(-40px)}
+.hero-text{flex:1;padding-left:20px;display:flex;flex-direction:column;align-items:center}
+.hero-text .company{font-size:88px;letter-spacing:4px;margin:-50px 0 0 0;color:var(--dark);font-weight:800;text-align:center}
+.hero-text .slogan{font-size:36px;margin:8px 0 0 0;color:#4c555b;font-weight:600;text-align:center;line-height:1.02}
+.btn-hero{display:block;margin:0 auto 48px auto;padding:14px 36px;border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,0.14);font-weight:900;position:relative;z-index:20}
+
+/* Card / panel visual improvements */
+.panel { background: rgba(255,255,255,0.94); border-radius:12px; padding:18px; box-shadow: 0 10px 30px rgba(20,30,50,0.06); transition: transform .22s ease, box-shadow .22s ease }
+.panel:hover{ transform: translateY(-6px); box-shadow: 0 20px 50px rgba(20,30,50,0.09) }
+.card-grid{display:grid;grid-template-columns: 1fr 1fr; gap:22px; max-width:1200px; margin:18px auto}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* Product form & detail specific */
+.product-title{font-size:20px;font-weight:800;text-align:center;margin-bottom:12px}
+.form-grid{display:grid;grid-template-columns: 1fr 1fr; gap:20px; max-width:1100px;margin:12px auto}
+label.form-label{display:block;margin-bottom:8px;color:var(--muted);font-weight:700}
+input[type=text], input[type=url], textarea, select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef6}
+.submit-row{text-align:center;margin-top:14px}
+
+/* Buttons */
+.btn { padding:10px 16px;border-radius:8px;border:none;cursor:pointer }
+.btn-primary{background:#0070c9;color:#fff}
+.btn-ghost{background:transparent;border:1px solid #cfe6fb;color:var(--accent)}
+
+.bottom-band{position:absolute;left:0;right:0;bottom:0;height:120px}
+.bottom-band img{width:100%;height:120px;object-fit:cover;display:block}
+.bottom-band .band-text{position:absolute;bottom:20px;color:#fff;font-weight:700;font-size:20px}
+.bottom-band .band-left{left:36px}
+.bottom-band .band-right{right:36px}
+
+@media (max-width:1100px){.banner-content{min-height:360px}.valve img{height:300px}.hero-text .company{font-size:48px}.hero-text .slogan{font-size:34px}}
+@media (max-width:720px){.banner-top{align-items:center}.logo img{height:96px}.banner-content{flex-direction:column;gap:12px;min-height:280px;padding-bottom:12px}.valve img{height:180px;max-width:80%}.hero-text .company{font-size:28px}.hero-text .slogan{font-size:20px}.bottom-band .band-text{display:none}.btn-hero{padding:10px 20px}}
+
+.text-center{text-align:center}
+
+/* Center CTA above bottom band */
+.btn-hero{position:fixed;left:50%;transform:translateX(-50%);bottom:48px;z-index:60;padding:14px 36px;border-radius:12px}
+
+/* header logo slot for all pages */
+.site-header{display:flex;align-items:center;justify-content:space-between;padding:6px 36px;max-width:1600px;margin:0 auto;position:relative}
+.site-header .logo img{height:64px}
+.site-header .company-top-right{position:absolute;left:50%;transform:translateX(-50%);top:6px;text-align:center}
+.site-header .company-top-right .company-line1{font-size:18px;font-weight:800;color:var(--accent);margin:0}
+.site-header .company-top-right .company-line2{font-size:11px;color:var(--muted);margin-top:2px}
+.site-header .user-area{position:absolute;right:28px;top:12px}
+
+/* small floating CTA for mobile/other pages when needed */
+.bottom-cta{position:fixed;left:50%;transform:translateX(-50%);bottom:32px;z-index:70}
+
+/* logout link styling */
+.user-area a{color:var(--accent);text-decoration:none;font-weight:700;padding:6px 10px;border-radius:6px}
+.user-area a.logout{background:rgba(11,107,179,0.06);border:1px solid rgba(11,107,179,0.08)}
+
+/* page background wrapper for product pages */
+.page-bg{background:linear-gradient(180deg, rgba(11,107,179,0.03) 0%, rgba(240,248,255,0.6) 100%);padding:28px 18px;border-radius:12px;max-width:1200px;margin:18px auto}
+
+/* products list delete button */
+.btn-delete{background:#ff4d4f;color:#fff;padding:6px 10px;border-radius:8px;border:none;cursor:pointer}
+.btn-delete:hover{transform:translateY(-2px)}
